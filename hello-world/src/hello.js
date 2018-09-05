@@ -15,6 +15,7 @@
  */
 function sayHello () {
   // TODO: Write your code here!
+  return 'Hello, World!'
 }
 
 exports.sayHello = sayHello
