@@ -17,6 +17,7 @@
  */
 function roundUp (number) {
   // TODO: Write your code here.
+  return Math.ceil(number)
 }
 
 /**
@@ -27,6 +28,7 @@ function roundUp (number) {
  */
 function roundDown (number) {
   // TODO: Write your code here.
+  return Math.floor(number)
 }
 
 /**
@@ -37,6 +39,7 @@ function roundDown (number) {
  */
 function round (number) {
   // TODO: Write your code here.
+  return Math.round(number)
 }
 
 /**
@@ -47,6 +50,7 @@ function round (number) {
  */
 function getStringLength (str) {
   // TODO: Write your code here.
+  return str.length
 }
 
 /**
@@ -57,6 +61,7 @@ function getStringLength (str) {
  */
 function getFirstLetter (str) {
   // TODO: Write your code here.
+  return str.charAt(0)
 }
 
 /**
@@ -67,6 +72,7 @@ function getFirstLetter (str) {
  */
 function getIndexOfQuestionMark (str) {
   // TODO: Write your code here.
+  return str.indexOf('?')
 }
 
 /**
@@ -78,6 +84,7 @@ function getIndexOfQuestionMark (str) {
  */
 function isEqual (str1, str2) {
   // TODO: Write your code here.
+  return str1 === str2
 }
 
 /**
@@ -88,6 +95,7 @@ function isEqual (str1, str2) {
  */
 function isOdd (number) {
   // TODO: Write your code here.
+  return !!(number % 2)
 }
 
 /**
@@ -98,6 +106,7 @@ function isOdd (number) {
  */
 function isEven (number) {
   // TODO: Write your code here.
+  return !(number % 2)
 }
 
 // Exports
