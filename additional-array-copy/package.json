@@ -1,6 +1,6 @@
 {
- "name": "exercise-additional-array-copy",
-   "version": "1.1.0",
+  "name": "exercise-additional-array-copy",
+  "version": "1.1.0",
   "main": "app.js",
   "homepage": "http://coursepress.lnu.se/kurs/grundlaggande-programmering/",
   "contributors": [
