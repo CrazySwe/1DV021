@@ -16,6 +16,14 @@
  */
 function createRightTriangle (base) {
   // TODO: Write your code here.
+  let str = ''
+  for (let row = 0; row < base; row++) {
+    for (let col = 0; col <= row; col++) {
+      str += '#'
+    }
+    str += '\n'
+  }
+  return str
 }
 
 exports.createRightTriangle = createRightTriangle
