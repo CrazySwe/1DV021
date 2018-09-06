@@ -37,6 +37,9 @@ function immutableSort (source) {
  */
 function immutableSortDescending (source) {
   // TODO: Write your code here.
+  let cpy = immutableSort(source)
+  cpy.reverse()
+  return cpy
 }
 
 exports.immutableSort = immutableSort
