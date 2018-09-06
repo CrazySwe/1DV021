@@ -19,6 +19,15 @@
  */
 function immutablePushNumber (source, number) {
   // TODO: Write your code here.
+  if (!Array.isArray(source)) {
+    throw new TypeError('array is not Array')
+  } else if (typeof number !== 'number') {
+    throw new TypeError('number is not Number')
+  }
+  // slice copies the array here
+  let result = source.slice(0)
+  result.push(number)
+  return result
 }
 
 exports.immutablePushNumber = immutablePushNumber
