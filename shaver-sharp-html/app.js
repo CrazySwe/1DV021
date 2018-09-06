@@ -26,10 +26,10 @@ html = shaverSharp.createElement('img')
 console.log(html)
 
 arr = [
-  {tagName: 'h1', innerHTML: 'A Brainy Quote'},
-  {tagName: 'p', innerHTML: 'The sharp employ the sharp.'},
-  {tagName: 'h1', innerHTML: 'Another Brainy Quote'},
-  {tagName: 'p', innerHTML: 'The pen is mightier than the sword if the sword is very short, and the pen is very sharp.'}
+  { tagName: 'h1', innerHTML: 'A Brainy Quote' },
+  { tagName: 'p', innerHTML: 'The sharp employ the sharp.' },
+  { tagName: 'h1', innerHTML: 'Another Brainy Quote' },
+  { tagName: 'p', innerHTML: 'The pen is mightier than the sword if the sword is very short, and the pen is very sharp.' }
 ]
 html = shaverSharp.createElements(arr)
 console.log(html)

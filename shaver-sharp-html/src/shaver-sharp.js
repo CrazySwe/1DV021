@@ -17,6 +17,7 @@
  */
 function createBeginTag (tagName) {
   // TODO: Write this code first
+  return `<${tagName}>`
 }
 
 /**
@@ -27,6 +28,7 @@ function createBeginTag (tagName) {
  */
 function createEndTag (tagName) {
   // TODO: Write this code second
+  return `</${tagName}>`
 }
 
 /**
@@ -38,6 +40,11 @@ function createEndTag (tagName) {
  */
 function createElement (tagName, innerHTML = '') {
   // TODO: Write this code third
+  if (innerHTML === '') {
+    return `<${tagName} />`
+  } else {
+    return createBeginTag(tagName) + innerHTML + createEndTag(tagName)
+  }
 }
 
 /**
@@ -49,6 +56,12 @@ function createElement (tagName, innerHTML = '') {
  */
 function createElements (elementData) {
   // TODO: Write this code last
+  let result = ''
+  for (let i = 0; i < elementData.length; i++) {
+    result += createElement(elementData[i].tagName, elementData[i].innerHTML)
+  }
+  return result
+  // console.log(elementData.length)
 }
 
 // Exports
