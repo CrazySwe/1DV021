@@ -110,6 +110,15 @@ function greetings () {
  */
 function replaceHyphensFor (str) {
   // TODO: Write your code here.
+  let result = ''
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) === '-') {
+      result += ' '
+    } else {
+      result += str.charAt(i)
+    }
+  }
+  return result
 }
 
 /**
@@ -119,7 +128,7 @@ function replaceHyphensFor (str) {
  * @returns {string} - A new string with all matches of a hyphen replaced by a space.
  */
 function replaceHyphensWhile (str) {
-  // TODO: Write your code here.
+  // TODO: Write your code here.  
 }
 
 /**
