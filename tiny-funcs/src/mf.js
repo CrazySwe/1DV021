@@ -19,6 +19,7 @@ function add () {
   let b = '21'
 
   // TODO: Write your code here.
+  b = parseInt(b)
 
   return a + b
 }
@@ -34,6 +35,7 @@ function concat () {
   let weeks = 'weeks.'
 
   // TODO: Write your code here.
+  return message + ' ' + time + ' ' + weeks
 }
 
 /**
@@ -46,6 +48,7 @@ function round () {
   let secondNumber = 29.27
 
   // TODO: Write your code here.
+  return Math.round(firstNumber + secondNumber)
 }
 
 /**
@@ -56,6 +59,20 @@ function round () {
  */
 function getOddNumbers (max) {
   // TODO: Write your code here.
+  // Let string be empty from beginning.
+  let str = ''
+
+  // Check if integer is actually 1 or bigger.
+  if (max >= 1) {
+    // Output the beginning of 1.
+    str = '1'
+    for (let i = 2; i <= max; i++) {
+      if (i % 2) {
+        str += ', ' + i
+      }
+    }
+  }
+  return str
 }
 
 /**
