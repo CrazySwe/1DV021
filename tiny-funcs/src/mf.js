@@ -66,6 +66,7 @@ function getOddNumbers (max) {
   if (max >= 1) {
     // Output the beginning of 1.
     str = '1'
+    // Then just add the rest
     for (let i = 2; i <= max; i++) {
       if (i % 2) {
         str += ', ' + i
@@ -87,8 +88,18 @@ function getOddNumbers (max) {
  */
 function greetings () {
   let hour = new Date().getHours()
-
   // TODO: Write your code here.
+  switch (hour) {
+    case hour >= 8 && hour < 12:
+      return 'Good morning!'
+    case hour >= 12 && hour < 18:
+      return 'Good afternoon!'
+    case hour >= 18 && hour < 24:
+      return 'Good evening!'
+    case hour >= 0 && hour < 8:
+    default:
+      return 'Good night!'
+  }
 }
 
 /**
