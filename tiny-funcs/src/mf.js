@@ -128,7 +128,18 @@ function replaceHyphensFor (str) {
  * @returns {string} - A new string with all matches of a hyphen replaced by a space.
  */
 function replaceHyphensWhile (str) {
-  // TODO: Write your code here.  
+  // TODO: Write your code here
+  let i = 0
+  let result = ''
+  while (str.length >= i) {
+    if (str.charAt(i) === '-') {
+      result += ' '
+    } else {
+      result += str.charAt(i)
+    }
+    i++
+  }
+  return result
 }
 
 /**
@@ -138,6 +149,17 @@ function replaceHyphensWhile (str) {
  */
 function getNumberSequence () {
   // TODO: Write your code here.
+  let str = ''
+  for (let i = 1; i < 6; i++) {
+    for (let j = 1; j < 4; j++) {
+      str += i.toString() + j.toString() + '-'
+    }
+    str = str.slice(0, -1)
+    if (i < 5) {
+      str += ', '
+    }
+  }
+  return str
 }
 
 exports.add = add
