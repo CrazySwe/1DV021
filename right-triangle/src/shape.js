@@ -18,6 +18,7 @@ function createRightTriangle (base) {
   // TODO: Write your code here.
   let str = ''
   for (let row = 0; row < base; row++) {
+    // foreach column on each row.
     for (let col = 0; col <= row; col++) {
       str += '#'
     }
