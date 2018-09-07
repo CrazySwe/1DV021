@@ -11,7 +11,7 @@
 let path = require('path')
 let fs = require('fs')
 
-  /**
+/**
    * Returns an array of team objects.
    *
    * @returns {Object[]} An array of team objects.
