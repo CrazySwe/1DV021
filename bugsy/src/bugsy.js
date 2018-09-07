@@ -24,15 +24,17 @@ function getGangster (initials) {
   let name
   let initialsOfTheName
 
-  do {
-    name = names.next().value
+  while ((name = names.next().value) !== undefined) {
     initialsOfTheName = mostWanted.getInitials(name)
     if (initials === initialsOfTheName) {
       theSuspect = name
     }
-  } while (name)
-
-  return theSuspect
+  }
+  if (theSuspect === undefined) {
+    return 'No suspect found!'
+  } else {
+    return theSuspect
+  }
 }
 
 exports.getGangster = getGangster
