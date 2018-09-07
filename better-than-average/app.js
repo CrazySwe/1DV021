@@ -10,10 +10,10 @@
 const ma = require('./src/my-array')
 
 let arr = [
-  {name: 'Stina', points: 1},
-  {name: 'Erik', points: 2},
-  {name: 'Maja', points: 3},
-  {name: 'Sven', points: 4}
+  { name: 'Stina', points: 1 },
+  { name: 'Erik', points: 2 },
+  { name: 'Maja', points: 3 },
+  { name: 'Sven', points: 4 }
 ]
 
 let result = ma.filterBetterThanAverage(arr)
