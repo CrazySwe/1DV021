@@ -23,6 +23,7 @@ function getGangster (initials) {
   let name
   let initialsOfTheName
 
+  // Could make this while condition better.
   while ((name = names.next().value) !== undefined) {
     initialsOfTheName = mostWanted.getInitials(name)
     if (initials === initialsOfTheName) {
