@@ -95,7 +95,7 @@ function isEqual (str1, str2) {
  */
 function isOdd (number) {
   // TODO: Write your code here.
-  return !!(number % 2)
+  return !!number % 2
 }
 
 /**
@@ -106,7 +106,7 @@ function isOdd (number) {
  */
 function isEven (number) {
   // TODO: Write your code here.
-  return !(number % 2)
+  return !number % 2
 }
 
 // Exports
