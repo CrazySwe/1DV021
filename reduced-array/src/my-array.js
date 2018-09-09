@@ -24,7 +24,7 @@ function getSum (data) {
   if (cpy.length === 0) {
     return 0
   } else {
-    return cpy.reduce((acc, val) => { return acc + val })
+    return cpy.reduce((acc, val) => acc + val)
   }
 }
 
