@@ -17,6 +17,15 @@
 */
 function getSum (data) {
   // TODO: Write your code here.
+  if (!Array.isArray(data)) {
+    throw new TypeError('data is not Array.')
+  }
+  let cpy = data.slice(0)
+  if (cpy.length === 0) {
+    return 0
+  } else {
+    return cpy.reduce((acc, val) => { return acc + val })
+  }
 }
 
 exports.getSum = getSum
