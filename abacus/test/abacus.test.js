@@ -75,7 +75,7 @@ describe('Test the module with non Number values', () => {
     expect(() => {
       abacus.add(1, 'lorem ipsum', 1)
     }).to.throw(TypeError)
-    .to.have.property('message', `At least one of the arguments can't be parsed as a number.`)
+      .to.have.property('message', `At least one of the arguments can't be parsed as a number.`)
     done()
   })
 
@@ -83,7 +83,7 @@ describe('Test the module with non Number values', () => {
     expect(() => {
       abacus.add(3, 3, true)
     }).to.throw(TypeError).and
-    .to.have.property('message', `At least one of the arguments can't be parsed as a number.`)
+      .to.have.property('message', `At least one of the arguments can't be parsed as a number.`)
     done()
   })
 })
