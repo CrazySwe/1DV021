@@ -21,10 +21,6 @@ function filterBetterThanAverage (students) {
   if (!Array.isArray(students)) {
     throw new TypeError('Parameter is not array.')
   }
-  // DAFUQ?!
-  // array.reduce((x, y) => x + y, 0)   //x är accumulator, adderar alla värden i arrayen med initalt värde på 0 på x.
-  // array.map((x) => x + 1)  //Ökar alla värden i array med 1
-  // array.filter(callback(element[, index[, array]])[, thisArg])   //returnerar ny array där elementen som passerar testet
   let cpy = students.slice(0)
 
   // Calc average
