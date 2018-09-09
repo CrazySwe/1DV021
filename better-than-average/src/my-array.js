@@ -23,7 +23,7 @@ function filterBetterThanAverage (students) {
   }
   let cpy = students.slice(0)
 
-  // Calc average
+  // Calc average with reduce function
   let average = cpy.reduce((acc, value, index) => {
     acc += value.points
     if (index === cpy.length - 1) {
