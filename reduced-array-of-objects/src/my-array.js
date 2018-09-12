@@ -18,6 +18,9 @@
  */
 function getSum (source) {
   // TODO: Write your code here!
+  if (!Array.isArray(source)) {
+    throw new TypeError('Argument is not of type Array.')
+  }
   let _Arr = source.slice(0)
   return _Arr.reduce((acc, val) => {
     return acc + val.nr
