@@ -18,7 +18,8 @@
  */
 function getSum (source) {
   // TODO: Write your code here!
-  return source.reduce((acc, val) => {
+  let _Arr = source.slice(0)
+  return _Arr.reduce((acc, val) => {
     return acc + val.nr
   }, 0)
 }
