@@ -18,6 +18,9 @@
  */
 function getSum (source) {
   // TODO: Write your code here!
+  return source.reduce((acc, val) => {
+    return acc + val.nr
+  }, 0)
 }
 
 // Exports
