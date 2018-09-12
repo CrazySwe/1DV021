@@ -9,12 +9,12 @@
 
 const harshad = require('./src/harshad')
 
-console.log(harshad.isValid(10))  // true
-console.log(harshad.isValid(24))  // true
+console.log(harshad.isValid(10)) // true
+console.log(harshad.isValid(24)) // true
 console.log(harshad.isValid(198)) // true
 
-console.log(harshad.isValid(17))   // false
-console.log(harshad.isValid(349))  // false
+console.log(harshad.isValid(17)) // false
+console.log(harshad.isValid(349)) // false
 console.log(harshad.isValid(2197)) // false
 
 console.log(harshad.getNext(14)) // 18
