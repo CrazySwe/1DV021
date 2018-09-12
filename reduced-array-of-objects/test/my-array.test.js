@@ -18,14 +18,14 @@ describe('Test the getSum function', () => {
     done()
   })
 
-  it('should return 9 when called with [{nr: 4}, {nr : 5}]', done => {
-    let sum = ma.getSum([{nr: 4}, {nr: 5}])
+  it('should return 9 when called with [{ nr: 4 }, { nr : 5 }]', done => {
+    let sum = ma.getSum([{ nr: 4 }, { nr: 5 }])
     expect(sum).eql(9)
     done()
   })
 
-  it('Should return 9 when called with [{nr: 3}, {nr : 3}, {nr: 3}]', done => {
-    let sum = ma.getSum([{nr: 3}, {nr: 3}, {nr: 3}])
+  it('Should return 9 when called with [{ nr: 3 }, { nr : 3 }, { nr: 3 }]', done => {
+    let sum = ma.getSum([{ nr: 3 }, { nr: 3 }, { nr: 3 }])
     expect(sum).eql(9)
     done()
   })
@@ -36,9 +36,9 @@ describe('Test the getSum function', () => {
   })
 
   it('The source array must be untouched.', done => {
-    let arr = [{nr: 3}, {nr: 42}, {nr: -3}]
+    let arr = [{ nr: 3 }, { nr: 42 }, { nr: -3 }]
     ma.getSum(arr)
-    expect(arr).to.eql([{nr: 3}, {nr: 42}, {nr: -3}])
+    expect(arr).to.eql([{ nr: 3 }, { nr: 42 }, { nr: -3 }])
     done()
   })
 })
