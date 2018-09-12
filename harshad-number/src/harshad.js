@@ -16,6 +16,10 @@
 */
 function isValid (number) {
   // TODO: Write your code here! This is the first function to implement.
+  if (typeof number !== 'number') { throw new TypeError('Argument is not of type number') }
+  return number % number
+    .toString(10).split('')
+    .reduce((acc, val) => acc + parseInt(val), 0) === 0
 }
 
 /**
