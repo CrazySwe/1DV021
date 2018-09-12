@@ -21,15 +21,23 @@ function add (varArgs) {
     // concat val with acc to flatten the array
     return acc.concat(val)
   }, [])
+
+  // Now all values are flattened, parsing strings
+  result.map(val => {
+    if (typeof val === 'string') {
+      return Number.parseFloat(val.replace(',', '.'))
+    } else {
+      return val
+    }
+  })
+
   // Check if any value is NotANumber
   if (result.some(val => isNaN(val))) {
     throw new TypeError(`At least one of the arguments can't be parsed as a number.`)
   }
-  // Now all values are checked, start adding them and/or parsing strings
-
   // debugger
   // console.log(result)
-  return result
+  return result.reduce((acc, val) => acc + val)
 
   // First try - Very messy
   // if (arguments.length === 0) {
