@@ -18,24 +18,19 @@ function add (varArgs) {
   // Utilize the 'arguments' object here, not the 'varArgs' parameter.
   // Second try using spread operator.
   let result = [...arguments].reduce((acc, val) => {
-    // flatten the array 1
     return acc.concat(val)
   }, [])
+    .map(val => {
+      if (typeof val === 'string') {
+        return parseFloat(val.replace(',', '.'))
+      } else {
+        return val
+      }
+    }, [])
 
-  // Now all values are flattened, parsing strings to numbers
-  result = result.map(val => {
-    if (typeof val === 'string') {
-      return parseFloat(val.replace(',', '.'))
-    } else {
-      return val
-    }
-  }, [])
-
-  // Check if any value is NotANumber, Array.prototype.some() returns true if one is true
   if (result.some(val => isNaN(val) || typeof val === 'boolean')) {
     throw new TypeError(`At least one of the arguments can't be parsed as a number.`)
   }
-  // debugger
 
   return result.reduce((acc, val) => acc + val, 0)
 
