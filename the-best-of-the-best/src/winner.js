@@ -16,6 +16,13 @@
  */
 function getFrequenciesOfNames (source) {
   // TODO: Write your code here
+  if (!Array.isArray(source)) {
+    throw new TypeError('Argument is not of type Array.')
+  }
+  return source.map(name => name.toLowerCase()).reduce((acc, val) => {
+    isNaN(acc[val]) ? acc[val] = 1 : acc[val]++
+    return acc
+  }, {})
 }
 
 /**
