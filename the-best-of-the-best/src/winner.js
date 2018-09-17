@@ -17,7 +17,7 @@
 function getFrequenciesOfNames (source) {
   // TODO: Write your code here
   if (!Array.isArray(source) || !source.every(val => typeof val === 'string')) {
-    throw new TypeError('Argument is not of type Array.')
+    throw new TypeError('Argument is not of type Array with strings.')
   }
   return source.map(name => name.toLowerCase()).reduce((acc, val) => {
     isNaN(acc[val]) ? acc[val] = 1 : acc[val]++
@@ -46,6 +46,10 @@ function getMostFrequentNames (obj) {
  */
 function sortNamesAscending (source) {
   // TODO: Write your code here
+  if (!Array.isArray(source) || !source.every(val => typeof val === 'string')) {
+    throw new TypeError('Argument is not of type Array with strings.')
+  }
+  return source.slice(0).sort((a, b) => a > b)
 }
 
 /**
