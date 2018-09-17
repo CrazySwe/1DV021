@@ -16,7 +16,7 @@
  */
 function getFrequenciesOfNames (source) {
   // TODO: Write your code here
-  if (!Array.isArray(source)) {
+  if (!Array.isArray(source) || !source.every(val => typeof val === 'string')) {
     throw new TypeError('Argument is not of type Array.')
   }
   return source.map(name => name.toLowerCase()).reduce((acc, val) => {
@@ -33,6 +33,9 @@ function getFrequenciesOfNames (source) {
  */
 function getMostFrequentNames (obj) {
   // TODO: Write your code here
+
+  let maxVal = Math.max(...Object.values(obj))
+  return Object.keys(obj).filter(val => obj[val] === maxVal)
 }
 
 /**
