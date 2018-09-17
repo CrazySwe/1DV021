@@ -26,7 +26,7 @@ function descriptiveStatistics (numbers) {
 /**
  * Returns the maximum value
  *
- * @param {number[]} numbers The set of numbers to get maximum value from.
+ * @param {number[]} numbers The array of numbers to get maximum value from.
  * @throws {TypeError} The passed argument is not an array.
  * @throws {Error} The passed array contains no elements.
  * @throws {TypeError} The passed array contains not just numbers.
@@ -36,7 +36,20 @@ function getMax (numbers) {
   validateData(numbers)
   return Math.max(...numbers)
 }
-// function getMean
+
+/**
+ * Returns a mean value of array with numbers
+ *
+ * @param {number[]} numbers The array of numbers
+ * @throws {TypeError} The passed argument is not an array.
+ * @throws {Error} The passed array contains no elements.
+ * @throws {TypeError} The passed array contains not just numbers.
+ * @returns {number} The mean value
+ */
+function getMean (numbers) {
+  validateData(numbers)
+  return numbers.reduce((acc, val) => acc + val) / numbers.length
+}
 // function getMedian
 // function getMinimum
 // function getMode
@@ -67,7 +80,7 @@ function validateData (numbers) {
 // Exports
 exports.descriptiveStatistics = descriptiveStatistics
 exports.maximum = getMax
-exports.mean = undefined
+exports.mean = getMean
 exports.median = undefined
 exports.minimum = undefined
 exports.mode = undefined
