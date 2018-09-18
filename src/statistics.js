@@ -72,7 +72,20 @@ function getMedian (numbers) {
   }
 }
 
-// function getMinimum
+/**
+ * Returns the minimum value in array
+ *
+ * @param {number[]} numbers The array of numbers
+ * @throws {TypeError} The passed argument is not an array.
+ * @throws {Error} The passed array contains no elements.
+ * @throws {TypeError} The passed array contains not just numbers.
+ * @returns {number} The minimum value
+ */
+function getMinimum (numbers) {
+  validateData(numbers)
+  return Math.min(...numbers)
+}
+
 // function getMode
 // function getRange
 // function getStandardDeviation
@@ -85,7 +98,6 @@ function getMedian (numbers) {
  * @throws {TypeError} The passed argument is not an array.
  * @throws {Error} The passed array contains no elements.
  * @throws {TypeError} The passed array contains not just numbers.
- * @returns {false} Returns 0 if passed
  */
 function validateData (numbers) {
   if (!Array.isArray(numbers)) {
@@ -95,7 +107,6 @@ function validateData (numbers) {
   } else if (!numbers.length) {
     throw new Error('The passed array contains no elements.')
   }
-  return 0
 }
 
 // Exports
@@ -103,7 +114,7 @@ exports.descriptiveStatistics = descriptiveStatistics
 exports.maximum = getMax
 exports.mean = getMean
 exports.median = getMedian
-exports.minimum = undefined
+exports.minimum = getMinimum
 exports.mode = undefined
 exports.range = undefined
 exports.standardDeviation = undefined
