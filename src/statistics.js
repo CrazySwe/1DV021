@@ -20,7 +20,8 @@
 function descriptiveStatistics (numbers) {
   validateData(numbers)
   // create my return here by calling my other functions
-  // return { maximum: maximum(), mean: mean(), median: median(), minimum: minimum(), mode: mode(), range: range(), standardDeviation: standardDeviation() }
+  // return { maximum: maximum(), mean: mean(), median: median(),
+  // minimum: minimum(), mode: mode(), range: range(), standardDeviation: standardDeviation() }
 }
 
 /**
@@ -38,7 +39,7 @@ function getMax (numbers) {
 }
 
 /**
- * Returns a mean value of array with numbers
+ * Returns a mean value of an array
  *
  * @param {number[]} numbers The array of numbers
  * @throws {TypeError} The passed argument is not an array.
@@ -50,7 +51,27 @@ function getMean (numbers) {
   validateData(numbers)
   return numbers.reduce((acc, val) => acc + val) / numbers.length
 }
-// function getMedian
+
+/**
+ * Returns a median value of an array
+ *
+ * @param {number[]} numbers The array of numbers
+ * @throws {TypeError} The passed argument is not an array.
+ * @throws {Error} The passed array contains no elements.
+ * @throws {TypeError} The passed array contains not just numbers.
+ * @returns {number} The median value
+ */
+function getMedian (numbers) {
+  validateData(numbers)
+  let middle = Math.floor(numbers.length / 2)
+  let sorted = numbers.slice(0).sort((a, b) => a > b)
+  if (sorted.length % 2) {
+    return sorted[middle]
+  } else {
+    return (sorted[middle - 1] + sorted[middle]) / 2.0
+  }
+}
+
 // function getMinimum
 // function getMode
 // function getRange
@@ -81,7 +102,7 @@ function validateData (numbers) {
 exports.descriptiveStatistics = descriptiveStatistics
 exports.maximum = getMax
 exports.mean = getMean
-exports.median = undefined
+exports.median = getMedian
 exports.minimum = undefined
 exports.mode = undefined
 exports.range = undefined
