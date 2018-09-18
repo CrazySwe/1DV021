@@ -64,7 +64,7 @@ function getMean (numbers) {
 function getMedian (numbers) {
   validateData(numbers)
   let middle = Math.floor(numbers.length / 2)
-  let sorted = numbers.slice(0).sort((a, b) => a > b)
+  let sorted = numbers.slice(0).sort((a, b) => a - b)
   if (sorted.length % 2) {
     return sorted[middle]
   } else {
@@ -92,7 +92,7 @@ function getMinimum (numbers) {
 
 // Error Handling
 /**
- * Validates the input data is Array, contains numbers else returns false.
+ * Validates the input data is Array and contains only numbers
  *
  * @param {number[]} numbers Data to be validated
  * @throws {TypeError} The passed argument is not an array.
