@@ -151,7 +151,11 @@ function getRange (numbers) {
  */
 function getStandardDeviation (numbers) {
   validateData(numbers)
-  // write code here
+  let mean = getMean(numbers)
+  let result = numbers.slice(0)
+    .map(a => Math.pow(a - mean, 2))
+    .reduce((acc, val) => acc + val, 0) / numbers.length
+  return Math.sqrt(result)
 }
 
 // Error Handling
