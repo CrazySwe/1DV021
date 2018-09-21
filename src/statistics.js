@@ -19,18 +19,17 @@
  */
 function descriptiveStatistics (numbers) {
   validateData(numbers)
-  // create my return here by calling my other functions
   return { maximum: getMax(numbers), mean: getMean(numbers), median: getMedian(numbers), minimum: getMinimum(numbers), mode: getMode(numbers), range: getRange(numbers), standardDeviation: getStandardDeviation(numbers) }
 }
 
 /**
- * Returns the maximum value
+ * Returns the maximum value in an array
  *
  * @param {number[]} numbers The array of numbers to get maximum value from.
  * @throws {TypeError} The passed argument is not an array.
  * @throws {Error} The passed array contains no elements.
  * @throws {TypeError} The passed array contains not just numbers.
- * @returns {number} The maximum value to return.
+ * @returns {number} The maximum value
  */
 function getMax (numbers) {
   validateData(numbers)
@@ -72,7 +71,7 @@ function getMedian (numbers) {
 }
 
 /**
- * Returns the minimum value in array
+ * Returns the minimum value in an array
  *
  * @param {number[]} numbers The array of numbers
  * @throws {TypeError} The passed argument is not an array.
@@ -86,7 +85,7 @@ function getMinimum (numbers) {
 }
 
 /**
- * Returns an array of which numbers occurs the most
+ * Returns an array of which numbers occurs the most in an array
  *
  * @param {number[]} numbers The array of numbers
  * @throws {TypeError} The passed argument is not an array.
@@ -126,7 +125,7 @@ function getMode (numbers) {
 }
 
 /**
- * Returns the range value of an array of numbers
+ * Returns the range value of an array
  *
  * @param {number[]} numbers The array of numbers
  * @throws {TypeError} The passed argument is not an array.
@@ -140,13 +139,13 @@ function getRange (numbers) {
 }
 
 /**
- * Return the deviatin value of an array of numbers
+ * Return the deviatin value of an array
  *
  * @param {number[]} numbers The array of numbers
  * @throws {TypeError} The passed argument is not an array.
  * @throws {Error} The passed array contains no elements.
  * @throws {TypeError} The passed array contains not just numbers.
- * @returns {number} Returns a deviationvalue
+ * @returns {number} Returns a deviation value
  */
 function getStandardDeviation (numbers) {
   validateData(numbers)
@@ -159,12 +158,12 @@ function getStandardDeviation (numbers) {
 
 // Error Handling
 /**
- * Validates the input data is Array and contains only numbers
+ * Validates the input data is of type Array and contains only numbers
  *
  * @param {number[]} numbers Data to be validated
  * @throws {TypeError} The passed argument is not an array.
  * @throws {Error} The passed array contains no elements.
- * @throws {TypeError} The passed array contains not just numbers.
+ * @throws {TypeError} The passed array contains not just numbers
  */
 function validateData (numbers) {
   if (!Array.isArray(numbers)) {
