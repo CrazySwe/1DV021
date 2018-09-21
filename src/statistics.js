@@ -86,7 +86,45 @@ function getMinimum (numbers) {
   return Math.min(...numbers)
 }
 
-// function getMode
+/**
+ * Returns an array of which numbers occurs the most
+ *
+ * @param {number[]} numbers The array of numbers
+ * @throws {TypeError} The passed argument is not an array.
+ * @throws {Error} The passed array contains no elements.
+ * @throws {TypeError} The passed array contains not just numbers.
+ * @returns {number[]} Returns an array of number(s) that occurs the most
+ */
+function getMode (numbers) {
+  validateData(numbers)
+
+  if (numbers.length === 1) {
+    return [numbers[0]]
+  }
+
+  // Sort them first
+  let _sorted = numbers.slice(0).sort((a, b) => a - b)
+  let result = []
+  let count = 1
+  let maxcount = 1
+
+  for (let i = 0; i < _sorted.length; i++) {
+    if (_sorted[i] === _sorted[(i + 1)]) {
+      // if x.value is equal to (x + 1).value then add count since they are sorted
+      count++
+    } else {
+      if (count > maxcount) {
+        maxcount = count
+        result = [_sorted[i]]
+      } else if (count === maxcount) {
+        // if some other number has equal counts, then add to array
+        result.push(_sorted[i])
+      }
+      count = 1
+    }
+  }
+  return result
+}
 // function getRange
 // function getStandardDeviation
 
@@ -115,6 +153,6 @@ exports.maximum = getMax
 exports.mean = getMean
 exports.median = getMedian
 exports.minimum = getMinimum
-exports.mode = undefined
+exports.mode = getMode
 exports.range = undefined
 exports.standardDeviation = undefined
