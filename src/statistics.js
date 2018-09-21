@@ -20,8 +20,7 @@
 function descriptiveStatistics (numbers) {
   validateData(numbers)
   // create my return here by calling my other functions
-  // return { maximum: maximum(), mean: mean(), median: median(),
-  // minimum: minimum(), mode: mode(), range: range(), standardDeviation: standardDeviation() }
+  return { maximum: getMax(numbers), mean: getMean(numbers), median: getMedian(numbers), minimum: getMinimum(numbers), mode: getMode(numbers), range: getRange(numbers), standardDeviation: getStandardDeviation(numbers) }
 }
 
 /**
