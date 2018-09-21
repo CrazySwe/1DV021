@@ -125,8 +125,34 @@ function getMode (numbers) {
   }
   return result
 }
-// function getRange
-// function getStandardDeviation
+
+/**
+ * Returns the range value of an array of numbers
+ *
+ * @param {number[]} numbers The array of numbers
+ * @throws {TypeError} The passed argument is not an array.
+ * @throws {Error} The passed array contains no elements.
+ * @throws {TypeError} The passed array contains not just numbers.
+ * @returns {number} Returns a range value
+ */
+function getRange (numbers) {
+  validateData(numbers)
+  return (getMax(numbers) - getMinimum(numbers))
+}
+
+/**
+ * Return the deviatin value of an array of numbers
+ *
+ * @param {number[]} numbers The array of numbers
+ * @throws {TypeError} The passed argument is not an array.
+ * @throws {Error} The passed array contains no elements.
+ * @throws {TypeError} The passed array contains not just numbers.
+ * @returns {number} Returns a deviationvalue
+ */
+function getStandardDeviation (numbers) {
+  validateData(numbers)
+  // write code here
+}
 
 // Error Handling
 /**
@@ -154,5 +180,5 @@ exports.mean = getMean
 exports.median = getMedian
 exports.minimum = getMinimum
 exports.mode = getMode
-exports.range = undefined
-exports.standardDeviation = undefined
+exports.range = getRange
+exports.standardDeviation = getStandardDeviation
