@@ -26,7 +26,7 @@ function descriptiveStatistics (numbers) {
     minimum: getMinimum(numbers),
     mode: getMode(numbers),
     range: getRange(numbers),
-    standardDeviation: getStandardDeviation(numbers) 
+    standardDeviation: getStandardDeviation(numbers)
   }
 }
 
