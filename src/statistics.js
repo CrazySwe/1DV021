@@ -1,7 +1,7 @@
 /**
  * Module for obtaining descriptive information about a set of data.
  *
- * @author TODO: Write your name here.
+ * @author Kevin Cederholm
  * @version 1.1.0
  */
 
@@ -19,7 +19,15 @@
  */
 function descriptiveStatistics (numbers) {
   validateData(numbers)
-  return { maximum: getMax(numbers), mean: getMean(numbers), median: getMedian(numbers), minimum: getMinimum(numbers), mode: getMode(numbers), range: getRange(numbers), standardDeviation: getStandardDeviation(numbers) }
+  return {
+    maximum: getMax(numbers),
+    mean: getMean(numbers),
+    median: getMedian(numbers),
+    minimum: getMinimum(numbers),
+    mode: getMode(numbers),
+    range: getRange(numbers),
+    standardDeviation: getStandardDeviation(numbers) 
+  }
 }
 
 /**
