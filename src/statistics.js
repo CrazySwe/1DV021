@@ -108,7 +108,6 @@ function getMode (numbers) {
     return [numbers[0]]
   }
 
-  // Sort them first
   let _sorted = numbers.slice(0).sort((a, b) => a - b)
   let result = []
   let count = 1
