@@ -18,10 +18,30 @@
  * @param {string} [color = 'red'] - The color of the brick ('blue', 'red', 'green', etc.)
  */
 function LegoBrick (x = 2, y = 4, color = 'red') {
+
+  /**
+   * @type {number}
+   */
   this.x = x
+
+  /**
+   * @type {number}
+   */
   this.y = y
+
+  /**
+   * @type {string}
+   */
   this.color = color
+
+  /**
+   * Render the object
+   */
   this.render = function () { console.log(this.toString()) }
+
+  /**
+   * @returns {string} String representing the object
+   */
   this.toString = function () {
     let str = ''
     for (let i = 0; i < y; i++) {
