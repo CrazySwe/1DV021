@@ -17,11 +17,43 @@
  * @param {number} [y = 4] - The vertical number of knobs of the brick.
  * @param {string} [color = 'red'] - The color of the brick ('blue', 'red', 'green', etc.)
  */
-function LegoBrick (x, y, color) {
-  // TODO: Write your code here.
+function LegoBrick (x = 2, y = 4, color = 'red') {
+  /**
+  * @type {number}
+  */
+  this.x = x
+
+  /**
+  * @type {number}
+  */
+  this.y = y
+
+  /**
+  * @type {string}
+  */
+  this.color = color
 }
 
-// TODO: Write your code here.
+/**
+ * @returns {string} String representing the lego
+*/
+LegoBrick.prototype.toString = function () {
+  let str = ''
+  for (let i = 0; i < this.y; i++) {
+    (str === '') ? str += '®' : str += '\n®'
+    for (let j = 1; j < this.x; j++) {
+      str += ' ®'
+    }
+  }
+  return str
+}
+
+/**
+ * Renders the object in the console
+ */
+LegoBrick.prototype.render = function () {
+  console.log(this.toString())
+}
 
 // Exports
 module.exports = LegoBrick
