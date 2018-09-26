@@ -18,7 +18,6 @@
  * @param {string} [color = 'red'] - The color of the brick ('blue', 'red', 'green', etc.)
  */
 function LegoBrick (x = 2, y = 4, color = 'red') {
-
   /**
    * @type {number}
    */
