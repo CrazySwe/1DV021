@@ -23,15 +23,17 @@
  * @returns {function} obj.render - A function rendering the object.
  */
 let createLegoBrick = function (x = 2, y = 4, color = 'red') {
-  // TODO: Write your code here.
-
   /**
    * @returns {string} Returning a string representing the object
    */
   let toString = function () {
-    let str = '®'
-    // create string from object
-    // should return legobrick in formatted '®'
+    let str = ''
+    for (let i = 0; i < y; i++) {
+      (str === '') ? str += '®' : str += '\n®'
+      for (let j = 1; j < x; j++) {
+        str += ' ®'
+      }
+    }
     return str
   }
 
