@@ -9,13 +9,19 @@
 
 'use strict'
 
-// TODO: Write your code here.
 let protoLegoBrick = {
   render () {
     console.log(this.toString())
   },
   toString () {
-    // test
+    let str = ''
+    for (let i = 0; i < this.y; i++) {
+      (str === '') ? str += '®' : str += '\n®'
+      for (let j = 1; j < this.x; j++) {
+        str += ' ®'
+      }
+    }
+    return str
   }
 }
 
@@ -32,12 +38,23 @@ let protoLegoBrick = {
  * @returns {function} obj.toString - A function returning a string representing the object.
  * @returns {function} obj.render - A function rendering the object.
  */
-let createLegoBrick = function (x, y, color) {
-  // TODO: Write your code here.
+let createLegoBrick = function (x = 2, y = 4, color = 'red') {
   return Object.create(protoLegoBrick, {
-    x: x,
-    y: y,
-    color: color
+    x: {
+      writable: true,
+      configurable: true,
+      value: x
+    },
+    y: {
+      writable: true,
+      configurable: true,
+      value: y
+    },
+    color: {
+      writable: true,
+      configurable: true,
+      value: color
+    }
   })
 }
 
