@@ -21,6 +21,7 @@ function Circle (radius) {
   // custom getters/setters : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#Custom_Setters_and_Getters
   Object.defineProperty(this, 'radius', {
     configurable: true,
+    enumerable: true,
     get: function () { return this.a },
     set: function (value) { this.a = this.b = value }
   })
