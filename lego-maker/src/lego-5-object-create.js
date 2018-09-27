@@ -10,9 +10,15 @@
 'use strict'
 
 let protoLegoBrick = {
+  /**
+   * Renders the object as a string to console
+   */
   render () {
     console.log(this.toString())
   },
+  /**
+   * @returns {string} string representing the lego brick
+   */
   toString () {
     let str = ''
     for (let i = 0; i < this.y; i++) {
