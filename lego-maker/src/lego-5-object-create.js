@@ -10,6 +10,14 @@
 'use strict'
 
 // TODO: Write your code here.
+let protoLegoBrick = {
+  render () {
+    console.log(this.toString())
+  },
+  toString () {
+    // test
+  }
+}
 
 /**
  * Returns an object representing a lego brick.
@@ -26,6 +34,11 @@
  */
 let createLegoBrick = function (x, y, color) {
   // TODO: Write your code here.
+  return Object.create(protoLegoBrick, {
+    x: x,
+    y: y,
+    color: color
+  })
 }
 
 // Exports
