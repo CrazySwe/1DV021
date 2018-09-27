@@ -26,14 +26,19 @@ function Circle (radius) {
   })
 }
 
+Circle.prototype = Object.create(Ellipse.prototype)
+
+// https://stackoverflow.com/questions/8453887/why-is-it-necessary-to-set-the-prototype-constructor
+Circle.prototype.constructor = Circle
+
+/**
+ * Returns a string representing the object
+ *
+ * @returns {string} String representing the object
+ */
 Circle.prototype.toString = function () {
   return `radius: ${this.radius}, area: ${this.getArea().toFixed(1)}, circumference: ${this.getCircumference().toFixed(1)}`
 }
-
-// Debugging
-let x = new Circle(3)
-x.radius = 25
-console.log(x.radius)
 
 // Exports
 module.exports = Circle
