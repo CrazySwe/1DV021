@@ -175,9 +175,13 @@ function getStandardDeviation (numbers) {
 function validateData (numbers) {
   if (!Array.isArray(numbers)) {
     throw new TypeError('The passed argument is not an array.')
-  } else if (!numbers.every(val => typeof val === 'number')) {
+  }
+
+  if (!numbers.every(val => typeof val === 'number' && !isNaN(val))) {
     throw new TypeError('The passed array contains not just numbers.')
-  } else if (!numbers.length) {
+  }
+
+  if (!numbers.length) {
     throw new Error('The passed array contains no elements.')
   }
 }
