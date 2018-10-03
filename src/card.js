@@ -30,6 +30,8 @@ const protoCard = {
  * @returns {object} obj - object representing a card
  * @returns {number|string} obj.value - The value of the card
  * @returns {string} obj.suit - The suit of the card
+ * @returns {function} obj.render - renders the card to the console
+ * @returns {function} obj.toString - function returning a string representing the card
  */
 let createCard = function (val, suit) {
   return Object.create(protoCard, {
