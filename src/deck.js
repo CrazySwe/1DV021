@@ -32,6 +32,17 @@ class Deck {
       this.cards[index] = tmp
     }
   }
+  drawCard () {
+    if (this.cards.length > 1) {
+      return this.cards.pop()
+    } else {
+      // refill this.cards and reshuffle
+      // get cards and put them back into this.cards?
+      // shuffle
+      // Then return a card drawn from this.cards
+      return this.cards.pop()
+    }
+  }
   toString () {
     let str = ''
     this.cards.forEach(card => { str += card.toString() + ' ' })
