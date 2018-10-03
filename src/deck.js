@@ -22,7 +22,15 @@ class Deck {
     })
   }
   shuffle () {
-    // shuffle the cards
+    // Fisher-Yates shuffle
+    let index = 0
+    let tmp
+    for (let i = this.cards.length - 1; i > 0; i--) {
+      index = Math.floor(Math.random() * i)
+      tmp = this.cards[i]
+      this.cards[i] = this.cards[index]
+      this.cards[index] = tmp
+    }
   }
   toString () {
     let str = ''
