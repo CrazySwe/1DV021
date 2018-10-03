@@ -1,5 +1,5 @@
 /**
- * Module for a deck of cards
+ * Module for card
  *
  * @author Kevin Cederholm
  * @version 1.0
