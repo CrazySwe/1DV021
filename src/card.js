@@ -17,7 +17,20 @@ const protoCard = {
 }
 
 let createCard = function (val, suit) {
-  return Object.create(protoCard)
+  return Object.create(protoCard, {
+    'value': {
+      value: val,
+      writable: true,
+      enumerable: true,
+      configurable: true
+    },
+    'suit': {
+      value: suit,
+      writable: true,
+      enumerable: true,
+      configurable: true
+    }
+  })
 }
 
 exports.createCard = createCard
