@@ -10,6 +10,11 @@
 const Deck = require('./deck.js')
 const Player = require('./player.js')
 
+/**
+ *
+ * @param {number} nrPlayers How many players to play in the game
+ * @class Game21
+ */
 class Game21 {
   constructor (nrPlayers) {
     this.dealer = new Player('Dealer')
@@ -23,12 +28,47 @@ class Game21 {
     }
   }
 
+  /**
+   * Main entry to start the game
+   * Runs until all players have played
+   *
+   * @memberof Game21
+   */
   run () {
     this.players.forEach(player => {
-      player.hand = [...player.hand, this.deckOfCards.drawCard()]
-      console.log(this.handValue(player.hand))
-      // Play against dealer here...
+      player.hand = this.playerTurn(player.hand)
+      let playerHandValue = this.handValue(player.hand)
+      let dealerHandValue = 0
+
+      console.log(`${player.name}: ${player.handToString()}(${playerHandValue})`)
+      if (playerHandValue === 21) {
+        console.log(`${this.dealer.name}   : -`)
+      } else if (playerHandValue < 21) {
+        this.dealer.hand = this.playerTurn(this.dealer.hand)
+        dealerHandValue = this.handValue(this.dealer.hand)
+        console.log(`${this.dealer.name}: ${this.dealer.handToString()}(${dealerHandValue})`)
+      } else {
+        console.log(`${this.dealer.name}   : -`)
+      }
+
+      (playerHandValue > 21 || playerHandValue <= dealerHandValue) && dealerHandValue <= 21 ? console.log('Dealer wins!') : console.log('Player wins!')
+      console.log('')
+      this.deckOfCards.usedCards = [].concat(this.deckOfCards.usedCards, ...player.hand, ...this.dealer.hand)
+      player.hand = []
+      this.dealer.hand = []
     })
+  }
+
+  playerTurn (playerHand) {
+    let handValue = 0
+    do {
+      playerHand = [...playerHand, this.deckOfCards.drawCard()]
+      handValue = this.handValue(playerHand)
+      if (handValue >= 15) {
+        break
+      }
+    } while (playerHand.length < 5)
+    return playerHand
   }
 
   /**
