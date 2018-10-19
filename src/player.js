@@ -12,7 +12,8 @@
  * @class Player
  */
 class Player {
-  constructor () {
+  constructor (name) {
+    this.name = name
     this.hand = []
     // this.done = false
   }
