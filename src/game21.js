@@ -25,8 +25,44 @@ class Game21 {
 
   run () {
     this.players.forEach(player => {
-      console.log(player.hand)
+      player.hand = [].concat(player.hand, this.deckOfCards.drawCard())
+      console.log(this.handValue(player.hand))
+      // Play against dealer here...
     })
+  }
+
+  /**
+   * Calculates the value of a hand with cards
+   *
+   * @param {Array} handArr An array of cards
+   * @returns {number} the value of the hand
+   * @memberof Game21
+   */
+  handValue (handArr) {
+    console.log(`handArr: ${handArr}`)
+    let nrAces = 0
+
+    let handValue = handArr.reduce((acc, val) => {
+      switch (val.value) {
+        case 'A':
+          nrAces++
+          return acc + 14
+        case 'K':
+          return acc + 13
+        case 'Q':
+          return acc + 12
+        case 'J':
+          return acc + 11
+        default:
+          return acc + val.value
+      }
+    }, 0)
+
+    while (handValue > 21 && nrAces > 0) {
+      handValue = handValue - 13
+      nrAces--
+    }
+    return handValue
   }
 }
 
