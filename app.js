@@ -7,9 +7,9 @@
 
 'use strict'
 
-const Deck = require('./src/deck.js')
+const Game21 = require('./src/game21.js')
 
-let myDeck = new Deck()
-console.log(`Before shuffle: ${myDeck.toString()}`)
-myDeck.shuffle()
-console.log(`After shuffle: ${myDeck.toString()}`)
+const NR_OF_PLAYERS = 3
+
+let game = new Game21(NR_OF_PLAYERS)
+game.run()
