@@ -1,6 +1,6 @@
 /**
  * game21.js
- * Handling and playing the card game of 21
+ * Handling and playing the card game 21
  *
  * @author Kevin Cederholm
  * @version 1.0
@@ -18,14 +18,14 @@ class Game21 {
 
     for (let i = 0; i < nrPlayers; i++) {
       let newPlayer = new Player(`Player #${i + 1}`)
-      newPlayer.hand = [ this.deckOfCards.drawCard() ]
-      this.players = [].concat(this.players, newPlayer)
+      newPlayer.hand = [this.deckOfCards.drawCard()]
+      this.players = [...this.players, newPlayer]
     }
   }
 
   run () {
     this.players.forEach(player => {
-      player.hand = [].concat(player.hand, this.deckOfCards.drawCard())
+      player.hand = [...player.hand, this.deckOfCards.drawCard()]
       console.log(this.handValue(player.hand))
       // Play against dealer here...
     })
@@ -39,7 +39,6 @@ class Game21 {
    * @memberof Game21
    */
   handValue (handArr) {
-    console.log(`handArr: ${handArr}`)
     let nrAces = 0
 
     let handValue = handArr.reduce((acc, val) => {
