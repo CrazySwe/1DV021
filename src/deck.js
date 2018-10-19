@@ -45,12 +45,10 @@ class Deck {
    * @memberof Deck
    */
   shuffle () {
-    // Fisher-Yates shuffle
-    let index = 0
-    let tmp
     for (let i = this.cards.length - 1; i > 0; i--) {
-      index = Math.floor(Math.random() * i)
-      tmp = this.cards[i]
+      let index = Math.floor(Math.random() * i)
+
+      let tmp = this.cards[i]
       this.cards[i] = this.cards[index]
       this.cards[index] = tmp
     }
@@ -70,6 +68,9 @@ class Deck {
       this.cards = [].concat(this.cards, this.usedCards)
       this.usedCards = []
       this.shuffle()
+      if (this.cards.length < 1) {
+        throw new Error('Deck ran out of cards!')
+      }
       return this.cards.pop()
     }
   }
