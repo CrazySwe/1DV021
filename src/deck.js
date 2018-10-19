@@ -67,7 +67,7 @@ class Deck {
     if (this.cards.length > 1) {
       return this.cards.pop()
     } else {
-      this.cards = this.cards.concat(this.usedCards)
+      this.cards = [].concat(this.cards, this.usedCards)
       this.usedCards = []
       this.shuffle()
       return this.cards.pop()

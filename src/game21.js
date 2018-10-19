@@ -18,15 +18,15 @@ class Game21 {
 
     for (let i = 0; i < nrPlayers; i++) {
       let newPlayer = new Player(`Player #${i + 1}`)
-      newPlayer.hand.push(this.deckOfCards.drawCard())
-      this.players.push(newPlayer)
+      newPlayer.hand = [ this.deckOfCards.drawCard() ]
+      this.players = [].concat(this.players, newPlayer)
     }
-    console.log(this.players)
-    console.log(this.dealer)
   }
 
   run () {
-    // run the game here.
+    this.players.forEach(player => {
+      console.log(player.hand)
+    })
   }
 }
 
