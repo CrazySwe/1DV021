@@ -33,7 +33,7 @@ class Deck {
     let newDeck = []
     suits.forEach(suit => {
       values.forEach(val => {
-        newDeck.push(Card.createCard(val, suit))
+        newDeck.push(new Card(val, suit))
       })
     })
     return newDeck

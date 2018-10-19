@@ -7,48 +7,36 @@
 
 'use strict'
 
-const protoCard = {
+/**
+ * Creates a card instance representing a playing card
+ *
+ * @constructor
+ * @param {*} val
+ * @param {*} suit
+ */
+function Card (val, suit) {
   /**
-   * Renders the card to the console
+   * The value of the card
+   *
+   * @type {number|string}
    */
-  render () {
-    console.log(this.toString())
-  },
+  this.value = val
   /**
-   * @returns {string} Representing the card
+   * The suit of the card
+   *
+   * @type {string}
    */
-  toString () {
-    return this.value + this.suit
-  }
+  this.suit = suit
 }
 
 /**
- * Returns an object representing a card
+ * Returns a string representing the card
  *
- * @param {string|number} val - The value of the card
- * @param {string} suit - The suit of the card
- * @returns {object} obj - object representing a card
- * @returns {number|string} obj.value - The value of the card
- * @returns {string} obj.suit - The suit of the card
- * @returns {function} obj.render - renders the card to the console
- * @returns {function} obj.toString - function returning a string representing the card
+ * @returns {string}
  */
-let createCard = function (val, suit) {
-  return Object.create(protoCard, {
-    value: {
-      value: val,
-      writable: true,
-      enumerable: true,
-      configurable: true
-    },
-    suit: {
-      value: suit,
-      writable: true,
-      enumerable: true,
-      configurable: true
-    }
-  })
+Card.prototype.toString = function () {
+  return this.value + this.suit
 }
 
 // Exports
-exports.createCard = createCard
+module.exports = Card
