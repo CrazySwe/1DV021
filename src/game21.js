@@ -46,13 +46,13 @@ class Game21 {
       } else if (playerHandValue < 21) {
         this.dealer.hand = this.playerTurn(this.dealer.hand)
         dealerHandValue = this.handValue(this.dealer.hand)
-        console.log(`${this.dealer.name}: ${this.dealer.handToString()}(${dealerHandValue})`)
+        console.log(`${this.dealer.name}   : ${this.dealer.handToString()}(${dealerHandValue})`)
       } else {
         console.log(`${this.dealer.name}   : -`)
       }
 
-      (playerHandValue > 21 || playerHandValue <= dealerHandValue) && dealerHandValue <= 21 ? console.log('Dealer wins!') : console.log('Player wins!')
-      console.log('')
+      (playerHandValue > 21 || playerHandValue <= dealerHandValue) && dealerHandValue <= 21 ? console.log('Dealer wins!\n') : console.log('Player wins!\n')
+
       this.deckOfCards.usedCards = [].concat(this.deckOfCards.usedCards, ...player.hand, ...this.dealer.hand)
       player.hand = []
       this.dealer.hand = []
