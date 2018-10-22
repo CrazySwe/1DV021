@@ -15,11 +15,11 @@ class Player {
   constructor (name) {
     this.name = name
     this.hand = []
-    this.handToString = function () {
-      let str = this.hand.reduce((str, card) => {
+    this.toString = function () {
+      // player.toString maybe?
+      return this.hand.reduce((str, card) => {
         return str + card.toString() + ' '
       }, '')
-      return str
     }
     // this.done = false
   }

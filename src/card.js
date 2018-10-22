@@ -11,8 +11,8 @@
  * Creates a card instance representing a playing card
  *
  * @constructor
- * @param {*} val
- * @param {*} suit
+ * @param {number|string} val
+ * @param {string} suit
  */
 function Card (val, suit) {
   /**
