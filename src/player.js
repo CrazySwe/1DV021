@@ -12,9 +12,33 @@
  * @class Player
  */
 class Player {
+  /**
+   * Creates an instance of Player.
+   * @param {string} name - The name of the player
+   * @constructor
+   * @memberof Player
+   */
   constructor (name) {
+    /**
+     * Name of the player
+     *
+     * @class Player
+     * @type {string}
+     */
     this.name = name
+    /**
+     * An array of Card objects
+     *
+     * @class Player
+     * @type {Array}
+     */
     this.hand = []
+    /**
+     * String representing the player and the players cards
+     *
+     * @class Player
+     * @type {function}
+     */
     this.toString = function () {
       let cardStr = this.hand.reduce((str, card) => {
         return str + card.toString() + ' '

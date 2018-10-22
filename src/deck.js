@@ -15,6 +15,10 @@ const Card = require('./card.js')
  * @class Deck
  */
 class Deck {
+  /**
+   * Creates an instance of Deck.
+   * @memberof Deck
+   */
   constructor () {
     this.cards = this.createNewDeck()
     this.shuffle()
@@ -55,9 +59,9 @@ class Deck {
   }
 
   /**
-   * Draws a card from this.cards if atleast 2 cards left,
-   * else it will concat the used cards and reshuffle before drawing a card.
+   * Draws a card from the deck of cards.
    *
+   * @type {function}
    * @returns {Object} Returns a Card object
    * @memberof Deck
    */
@@ -78,6 +82,7 @@ class Deck {
   /**
    * Method to return a string that represent the deck of cards
    *
+   * @type {function}
    * @returns {string} String representing the deck of cards
    * @memberof Deck
    */

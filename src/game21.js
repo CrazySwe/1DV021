@@ -12,10 +12,15 @@ const Player = require('./player.js')
 
 /**
  *
- * @param {number} nrPlayers How many players to play in the game
  * @class Game21
  */
 class Game21 {
+  /**
+   * Creates an instance of Game21.
+   * @param {number} nrPlayers
+   * @constructor
+   * @memberof Game21
+   */
   constructor (nrPlayers) {
     this.dealer = new Player('Dealer')
     this.deckOfCards = new Deck()
@@ -29,16 +34,15 @@ class Game21 {
   }
 
   /**
-   * Main method to start the game
-   * Runs until all players have played
+   * Start a game of 21
    *
    * @memberof Game21
+   * @type {function}
    */
   run () {
     this.players.forEach(player => {
-      // First play player
       player.hand = this.playerTurn(player.hand)
-      let playerHandValue = this.handValue(player.hand)
+      let playerHandValue = this.getHandValue(player.hand)
       let dealerHandValue = 0
 
       let dealerStr = ''
@@ -46,9 +50,8 @@ class Game21 {
       if (playerHandValue > 21) { playerStr += ' BUSTED!' }
 
       if (playerHandValue < 21 && player.hand.length !== 5) {
-        // Play dealer
         this.dealer.hand = this.playerTurn(this.dealer.hand)
-        dealerHandValue = this.handValue(this.dealer.hand)
+        dealerHandValue = this.getHandValue(this.dealer.hand)
         dealerStr += `${this.dealer.toString()}(${dealerHandValue})`
         dealerHandValue > 21 && (dealerStr += ' BUSTED!')
       } else {
@@ -75,7 +78,7 @@ class Game21 {
     let handValue = 0
     do {
       playerHand = [...playerHand, this.deckOfCards.drawCard()]
-      handValue = this.handValue(playerHand)
+      handValue = this.getHandValue(playerHand)
       if (handValue >= 15) {
         break
       }
@@ -90,7 +93,7 @@ class Game21 {
    * @returns {number} the value of the hand
    * @memberof Game21
    */
-  handValue (handArr) {
+  getHandValue (handArr) {
     let nrAces = 0
 
     let handValue = handArr.reduce((acc, val) => {
