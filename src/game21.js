@@ -43,7 +43,7 @@ class Game21 {
 
       let dealerStr = ''
       let playerStr = `${player.toString()}(${playerHandValue})`
-      playerHandValue > 21 && (playerStr += ' BUSTED!')
+      if (playerHandValue > 21) { playerStr += ' BUSTED!' }
 
       if (playerHandValue < 21 && player.hand.length !== 5) {
         // Play dealer
