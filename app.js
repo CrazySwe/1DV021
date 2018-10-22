@@ -1,5 +1,5 @@
 /**
- * Starting point of application
+ * Starting point of the application
  *
  * @author Kevin Cederholm
  * @version 1.0

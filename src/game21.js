@@ -58,7 +58,6 @@ class Game21 {
         dealerStr += `${this.dealer.name}: -`
       }
 
-      // output results
       console.log(playerStr)
       console.log(dealerStr)
       if ((playerHandValue > 21 || playerHandValue <= dealerHandValue) && dealerHandValue <= 21) {
@@ -67,13 +66,18 @@ class Game21 {
         console.log(`${player.name} wins!\n`)
       }
 
-      // clean up for next player
       this.deckOfCards.usedCards = [...this.deckOfCards.usedCards, ...player.hand, ...this.dealer.hand]
       player.hand = []
       this.dealer.hand = []
     })
   }
-
+  /**
+   * Players turn to draw cards and play
+   *
+   * @param {array} playerHand
+   * @returns {array} - Array containing the cards the players is satisfied with
+   * @memberof Game21
+   */
   playerTurn (playerHand) {
     let handValue = 0
     do {
