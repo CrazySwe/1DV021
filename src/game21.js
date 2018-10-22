@@ -29,30 +29,43 @@ class Game21 {
   }
 
   /**
-   * Main entry to start the game
+   * Main method to start the game
    * Runs until all players have played
    *
    * @memberof Game21
    */
   run () {
     this.players.forEach(player => {
+      // First play player
       player.hand = this.playerTurn(player.hand)
       let playerHandValue = this.handValue(player.hand)
       let dealerHandValue = 0
 
-      console.log(`${player.name}: ${player.toString()}(${playerHandValue})`)
+      let dealerStr = ''
+      let playerStr = `${player.toString()}(${playerHandValue})`
+      playerHandValue > 21 && (playerStr += ' BUSTED!')
 
       if (playerHandValue < 21 && player.hand.length !== 5) {
+        // Play dealer
         this.dealer.hand = this.playerTurn(this.dealer.hand)
         dealerHandValue = this.handValue(this.dealer.hand)
-        console.log(`${this.dealer.name}   : ${this.dealer.toString()}(${dealerHandValue})`)
+        dealerStr += `${this.dealer.toString()}(${dealerHandValue})`
+        dealerHandValue > 21 && (dealerStr += ' BUSTED!')
       } else {
-        console.log(`${this.dealer.name}   : -`)
+        dealerStr += `${this.dealer.name}: -`
       }
 
-      (playerHandValue > 21 || playerHandValue <= dealerHandValue) && dealerHandValue <= 21 ? console.log('Dealer wins!\n') : console.log('Player wins!\n')
+      // output results
+      console.log(playerStr)
+      console.log(dealerStr)
+      if ((playerHandValue > 21 || playerHandValue <= dealerHandValue) && dealerHandValue <= 21) {
+        console.log(`${this.dealer.name} wins!\n`)
+      } else {
+        console.log(`${player.name} wins!\n`)
+      }
 
-      this.deckOfCards.usedCards = [].concat(this.deckOfCards.usedCards, ...player.hand, ...this.dealer.hand)
+      // clean up for next player
+      this.deckOfCards.usedCards = [...this.deckOfCards.usedCards, ...player.hand, ...this.dealer.hand]
       player.hand = []
       this.dealer.hand = []
     })

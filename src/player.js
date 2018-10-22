@@ -16,12 +16,11 @@ class Player {
     this.name = name
     this.hand = []
     this.toString = function () {
-      // player.toString maybe?
-      return this.hand.reduce((str, card) => {
+      let cardStr = this.hand.reduce((str, card) => {
         return str + card.toString() + ' '
       }, '')
+      return `${this.name}: ${cardStr}`
     }
-    // this.done = false
   }
 }
 
