@@ -11,6 +11,7 @@ const Deck = require('./deck.js')
 const Player = require('./player.js')
 
 /**
+ * Class handling the logic of card game 21
  *
  * @class Game21
  */
@@ -34,14 +35,14 @@ class Game21 {
   }
 
   /**
-   * Start a game of 21
+   * Start and play a game of 21
    *
    * @memberof Game21
    * @type {function}
    */
-  run () {
+  run (playerStop, dealerStop) {
     this.players.forEach(player => {
-      player.hand = this.playerTurn(player.hand)
+      player.hand = this.playerTurn(player.hand, playerStop)
       let playerHandValue = this.getHandValue(player.hand)
       let dealerHandValue = 0
 
@@ -50,7 +51,7 @@ class Game21 {
       if (playerHandValue > 21) { playerStr += ' BUSTED!' }
 
       if (playerHandValue < 21 && player.hand.length !== 5) {
-        this.dealer.hand = this.playerTurn(this.dealer.hand)
+        this.dealer.hand = this.playerTurn(this.dealer.hand, dealerStop)
         dealerHandValue = this.getHandValue(this.dealer.hand)
         dealerStr += `${this.dealer.toString()}(${dealerHandValue})`
         dealerHandValue > 21 && (dealerStr += ' BUSTED!')
@@ -74,16 +75,16 @@ class Game21 {
   /**
    * Players turn to draw cards and play
    *
-   * @param {array} playerHand
+   * @param {array} playerHand - Then hand of the player
    * @returns {array} - Array containing the cards the players is satisfied with
    * @memberof Game21
    */
-  playerTurn (playerHand) {
+  playerTurn (playerHand, stopAt = 15) {
     let handValue = 0
     do {
       playerHand = [...playerHand, this.deckOfCards.drawCard()]
       handValue = this.getHandValue(playerHand)
-      if (handValue >= 15) {
+      if (handValue >= stopAt) {
         break
       }
     } while (playerHand.length < 5)

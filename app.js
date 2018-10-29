@@ -10,6 +10,8 @@
 const Game21 = require('./src/game21.js')
 
 const NR_OF_PLAYERS = 3
+const PLAYERS_STOP = 8
+const DEALER_STOP = 15
 
 let game = new Game21(NR_OF_PLAYERS)
-game.run()
+game.run(PLAYERS_STOP, DEALER_STOP)
