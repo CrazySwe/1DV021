@@ -38,6 +38,7 @@ class Player {
      *
      * @class Player
      * @type {function}
+     * @return {string} - A string representing the player and players hand of cards
      */
     this.toString = function () {
       let cardStr = this.hand.reduce((str, card) => {

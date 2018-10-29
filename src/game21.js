@@ -17,8 +17,9 @@ const Player = require('./player.js')
  */
 class Game21 {
   /**
-   * Creates an instance of Game21.
-   * @param {number} nrPlayers
+   * Creates an instance of Game21 with players
+   *
+   * @param {number} nrPlayers - The amount of players playing
    * @constructor
    * @memberof Game21
    */
@@ -35,8 +36,10 @@ class Game21 {
   }
 
   /**
-   * Start and play a game of 21
+   * Start and play a game of simulated 21
    *
+   * @param {number} playerStop - The value the player should be satisfied
+   * @param {number} dealerStop - The value the dealer should be satisfied
    * @memberof Game21
    * @type {function}
    */
@@ -75,7 +78,8 @@ class Game21 {
   /**
    * Players turn to draw cards and play
    *
-   * @param {array} playerHand - Then hand of the player
+   * @param {array} playerHand - The hand of the player
+   * @param {number} stopAt - The value to stop drawing cards
    * @returns {array} - Array containing the cards the players is satisfied with
    * @memberof Game21
    */

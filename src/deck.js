@@ -28,7 +28,8 @@ class Deck {
   /**
    * Returns an array with Card objects that represents a deck of 52 cards
    *
-   * @returns {Array} of cards
+   * @type {function}
+   * @returns {Array} - An array of 52 cards
    * @memberof Deck
    */
   createNewDeck () {
@@ -46,6 +47,7 @@ class Deck {
   /**
    * Method to shuffle the deck of cards
    *
+   * @type {function}
    * @memberof Deck
    */
   shuffle () {
@@ -63,6 +65,7 @@ class Deck {
    *
    * @type {function}
    * @returns {Object} Returns a Card object
+   * @throws {Error} - Throws error if there is no cards to return
    * @memberof Deck
    */
   drawCard () {
